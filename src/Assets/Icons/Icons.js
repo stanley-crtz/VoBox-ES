@@ -9,6 +9,10 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import GroupIcon from '@material-ui/icons/Group';
 import SpeakerNotesIcon from '@material-ui/icons/SpeakerNotes';
 import EmailIcon from '@material-ui/icons/Email';
+import MenuIcon from '@material-ui/icons/Menu';
+import EventIcon from '@material-ui/icons/Event';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 export const Icons = {
     User: <AccountCircleIcon />,
@@ -20,5 +24,9 @@ export const Icons = {
     Document: <AssignmentIcon />,
     Group: <GroupIcon />,
     Notes: <SpeakerNotesIcon />,
-    Email: <EmailIcon />
+    Email: <EmailIcon />,
+    Menu: <MenuIcon />,
+    Event: <EventIcon />,
+    Notification: <NotificationsIcon />,
+    Exit: <ExitToAppIcon />
 }

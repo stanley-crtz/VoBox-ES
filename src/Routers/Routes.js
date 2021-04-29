@@ -8,6 +8,8 @@ import { Grupos } from '../Pages/Grupos';
 import { Solicitudes } from '../Pages/Solicitudes';
 import { SplashScreen } from '../Components/SplashScreen';
 import { ConnectToRedux } from '../Components/ConnectToRedux';
+import { ProtectedRoute } from './ProtectedRoute';
+import { Settings } from '../Pages/Settings';
 
 export const Routes = ConnectToRedux(({ User }) => {
 
@@ -44,10 +46,11 @@ export const Routes = ConnectToRedux(({ User }) => {
 
                         <div className="container">
                             <Switch>
-                                <Route exact path="/_" component={() => <Redirect to="/_Inicio" />} />
-                                <Route exact path="/_Inicio" component={Home} />
-                                <Route exact path="/_Grupos" component={Grupos} />
-                                <Route exact path="/_Solicitudes" component={Solicitudes} />
+                                <ProtectedRoute exact path="/_" component={() => <Redirect to="/_Inicio" />} />
+                                <ProtectedRoute exact path="/_Inicio" component={Home} />
+                                <ProtectedRoute exact path="/_Grupos" component={Grupos} />
+                                <ProtectedRoute exact path="/_Solicitudes" component={Solicitudes} />
+                                <ProtectedRoute exact path="/_Ajustes" component={Settings} />
                             </Switch>
                         </div>
                         <Route exact path="/Login" component={Login} />

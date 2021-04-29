@@ -51,6 +51,17 @@ export const Items = () => {
                         {Icons.Notes}
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink 
+                        activeClassName="Rute-Active" 
+                        to='/_Ajustes'
+                        onMouseEnter={(e) => handleMouseEnter(e, 'Ajustes')} 
+                        onMouseLeave={handleMouseLeave} 
+                        onClick={handleMouseLeave}
+                    >
+                        {Icons.Menu}
+                    </NavLink>
+                </li>
             </ul>
             <Popover message={message} anchorEl={anchorEl} onClose={handleMouseLeave} />
         </div>
