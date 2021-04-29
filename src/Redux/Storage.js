@@ -1,15 +1,6 @@
 import { createStore } from 'redux';
 
-const initialState = {
-    Address: '',
-    DUI: '',
-    Email: '',
-    NIT: '',
-    Name: '',
-    Photo: '',
-    TypeAcount: '',
-    uid: '',
-}
+const initialState = null;
 
 const reducer = (state = initialState, action) => {
 

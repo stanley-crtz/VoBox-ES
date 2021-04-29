@@ -74,12 +74,12 @@ section.loginPage {
     color: rgb(182, 181, 179);
 }
 
-.forgetPassword{
+.forgetPassword {
     margin: 10px;
     color: #6faaf7;
 }
 
-.line{
+.line {
     background-color: #dadde1;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -87,7 +87,7 @@ section.loginPage {
     width: 90%;
 }
 
-.line-vertical{
+.line-vertical {
     background-color: #dadde1;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -119,19 +119,19 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
     cursor: pointer;
 }
 
-.loginTitle{
+.loginTitle {
     color: #3578f2;
     font-size: 40px;
     font-weight: bold;
 }
 
-.loginPage > .flex1 > .content{
+.loginPage>.flex1>.content {
     display: flex;
     flex-direction: column;
     max-width: 400px;
 }
 
-.loginPage > .flex1 > .content > p{
+.loginPage>.flex1>.content>p {
     font-size: 20px;
 }
 
@@ -141,35 +141,33 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
     transition: 0.5s;
 }
 
-.createAcountButton{
+.createAcountButton {
     color: white;
     background-color: #53b72a;
     max-width: 200px !important;
     transition: 0.5s;
 }
 
-.success:hover,
-.createAcountButton:hover {
+.success:hover, .createAcountButton:hover {
     -webkit-box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
     -moz-box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
     box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
     transition: 0.5s;
 }
 
-.Cards{
+.Cards {
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
 }
 
-.Cards,
-.Card{
+.Cards, .Card {
     display: flex;
     margin: 10px;
     align-items: center;
 }
 
-.Card{
+.Card {
     border: 1px solid #dadde1;
     border-radius: 10px;
     min-width: 200px;
@@ -177,68 +175,67 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
     padding: 10px;
 }
 
-.Card:hover,
-.Card-Active{
+.Card:hover, .Card-Active {
     background-color: #3578f2;
     cursor: pointer;
     color: white;
     transition: 0.5s;
 }
 
-.Card-Content{
+.Card-Content {
     margin-left: 10px;
 }
 
-.Card-Title{
+.Card-Title {
     border-bottom: 1px solid #dadde1;
     margin-bottom: 10px;
 }
 
-.containerTitleModal{
+.containerTitleModal {
     display: flex;
     margin-left: 10px;
     margin-right: 10px;
     width: 100%;
 }
 
-.LeftTitleModal{
+.LeftTitleModal {
     flex: 1;
 }
 
-.RightTitleModal{
+.RightTitleModal {
     /* flex: 1; */
     text-align: right;
 }
 
-.RightTitleModal:hover{
+.RightTitleModal:hover {
     color: #dadde1;
     cursor: pointer;
     transition: 0.2s;
 }
 
-.firebaseui-idp-text-long{
+.firebaseui-idp-text-long {
     display: none !important;
 }
 
-.firebaseui-idp-text-short{
+.firebaseui-idp-text-short {
     display: table-cell !important;
     text-align: center !important;
     width: 100%;
 }
 
-.firebaseui-idp-text{
+.firebaseui-idp-text {
     padding-left: 0px !important;
 }
 
-#firebaseui_container{
+#firebaseui_container {
     flex: 1;
 }
 
-.container-type-register{
+.container-type-register {
     display: flex;
 }
 
-.firebase-email-container{
+.firebase-email-container {
     align-items: center;
     flex: 1;
     display: flex;
@@ -246,47 +243,47 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
     flex-direction: column;
 }
 
-.firebaseui-idp-button{
+.firebaseui-idp-button {
     border-radius: 10px !important;
 }
 
-.hover:hover{
+.hover:hover {
     cursor: pointer;
 }
 
-.red{
+.red {
     color: red;
 }
 
-.green{
+.green {
     color: green;
 }
 
-.swal2-backdrop-show{
+.swal2-backdrop-show {
     z-index: 2000 !important;
 }
 
-.AboutUser{
+.AboutUser {
     display: flex;
     flex-direction: column;
     flex: 1;
     max-width: 700px;
 }
 
-.AboutUser .About{
+.AboutUser .About {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.AboutPhoto{
+.AboutPhoto {
     display: flex;
     position: relative;
     flex: 1;
     justify-content: center;
 }
 
-.AboutPhoto > input[type="file"]{
+.AboutPhoto>input[type="file"] {
     position: absolute;
     border-radius: 60px;
     width: 120px;
@@ -294,17 +291,17 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
     opacity: 0;
 }
 
-.AboutPhoto > input[type="file"]:hover{
+.AboutPhoto>input[type="file"]:hover {
     cursor: pointer;
 }
 
-.AboutPhoto > img{
+.AboutPhoto>img {
     border-radius: 60px;
     width: 120px;
     height: 120px;
 }
 
-.AboutInfo{
+.AboutInfo {
     display: flex;
     flex: 1;
     flex-wrap: wrap;
@@ -313,19 +310,19 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
     align-items: center;
 }
 
-.AboutInfo > .input {
+.AboutInfo>.input {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.AboutButtons{
+.AboutButtons {
     display: flex;
     flex: 1;
     justify-content: center;
 }
 
-nav{
+nav {
     background-color: #5098e0;
     color: white;
     display: flex;
@@ -339,15 +336,15 @@ nav{
     z-index: 2;
 }
 
-nav > div{
+nav>div {
     display: flex;
     align-items: center;
     margin-left: 10px;
     margin-right: 10px;
     height: 100%;
 }
- 
-.Navbar-Settings{
+
+.Navbar-Settings {
     height: 80%;
     display: flex;
     align-items: center;
@@ -355,30 +352,30 @@ nav > div{
     border-radius: 50px;
 }
 
-.Navbar-Settings:hover{
+.Navbar-Settings:hover {
     cursor: pointer;
     background-color: gray;
 }
 
-.Navbar-Icon{
+.Navbar-Icon {
     display: contents;
 }
 
-.Navbar-Icon > img:hover{
+.Navbar-Icon>img:hover {
     cursor: pointer;
 }
 
-.Navbar-Icon > img {
+.Navbar-Icon>img {
     border-radius: 10px;
     max-width: 150px;
     height: 100%;
 }
 
-.Navbar-Items{
+.Navbar-Items {
     height: 100%;
 }
 
-.Navbar-Items > ul{
+.Navbar-Items>ul {
     display: flex;
     list-style: none;
     height: 100%;
@@ -387,7 +384,7 @@ nav > div{
     text-align: center;
 }
 
-.Navbar-Items > ul > li{
+.Navbar-Items>ul>li {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -397,14 +394,14 @@ nav > div{
     width: 90px;
 }
 
-.Navbar-Items > ul > li > a:hover{
+.Navbar-Items>ul>li>a:hover {
     border-radius: 10px;
     background-color: rgba(30, 86, 238, 0.5);
     cursor: pointer;
     transition: 1s;
 }
 
-.Navbar-Items > ul > li > a{
+.Navbar-Items>ul>li>a {
     text-decoration: none;
     color: white;
     height: 100%;
@@ -414,29 +411,29 @@ nav > div{
     justify-content: center;
 }
 
-.Rute-Active{
+.Rute-Active {
     color: white;
     border-bottom: 4px solid #fff;
 }
 
-.Rute-Active:hover{
+.Rute-Active:hover {
     border-radius: 0px !important;
     background: transparent !important;
 }
 
-.container{
+.container {
     position: absolute;
     margin-top: 60px;
     width: 100%;
 }
 
-.Computer{
+.Computer {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.Movil{
+.Movil {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -444,7 +441,7 @@ nav > div{
     display: none;
 }
 
-.Movil .Content-movil-nav{
+.Movil .Content-movil-nav {
     align-items: center;
     display: flex;
     width: 100%;
@@ -452,28 +449,28 @@ nav > div{
     justify-content: space-between;
 }
 
-.FrmSettings{
+.FrmSettings {
     display: flex;
     flex-direction: column;
     width: 300px;
     max-width: 100%;
 }
 
-.FrmSettings > .AboutUser{
+.FrmSettings>.AboutUser {
     flex: 1;
     justify-content: center;
     align-items: center;
 }
 
-.FrmSettings > .AboutUser > div{
+.FrmSettings>.AboutUser>div {
     margin-bottom: 10px;
 }
 
-.FrmSettings > .AboutUser > span:nth-child(3){
+.FrmSettings>.AboutUser>span:nth-child(3) {
     margin-bottom: 10px;
 }
 
-.FrmSettings > .AboutUser > input[type="button"]{
+.FrmSettings>.AboutUser>input[type="button"] {
     width: 200px;
     font-size: 14px;
     height: 30px;
@@ -481,50 +478,103 @@ nav > div{
     border: 1px solid #3e88fe;
 }
 
-.FrmSettings > .AboutUser > input[type="button"]:hover{
+.FrmSettings>.AboutUser>input[type="button"]:hover {
     background-color: #3e88fe !important;
     cursor: pointer;
 }
 
+/* SPLASH SCRENN */
+
+.Splash{
+    background: #1DA1F2;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Splash > #icon{
+    --size: 200px;
+	
+	transform: translate(-50%,-50%);
+	width: var(--size);
+}
+
+.cover {
+	background: #1DA1F2;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	animation: fade-out 2s /*infinite*/;
+}
+
+.cover > #icon {
+	--size: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: var(--size);
+	
+	animation: zoom-in 1s /*infinite*/;
+	animation-delay: 1s;
+}
+
+@keyframes zoom-in {
+	50% {
+		width: var(--size);
+	}
+	60% {
+		width: calc(var(--size) * 0.9);
+	}
+	100% {
+		width: 250%;
+	}
+}
+@keyframes fade-out {
+	0%, 85% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
 @media screen and (max-width: 1068px) {
-    .loginPage > div:nth-child(1){
+    .loginPage>div:nth-child(1) {
         display: none;
     }
-
-    .container-type-register{
+    .container-type-register {
         flex-direction: column;
     }
-
-    .AboutUser .About{
+    .AboutUser .About {
         flex-direction: column;
     }
 }
 
 @media screen and (max-width: 540px) {
-    .Movil{
+    .Movil {
         display: flex;
     }
-
-    .Computer{
+    .Computer {
         display: none;
     }
-
-    nav{
+    nav {
         height: 110px;
     }
-
-    .Navbar-Items{
+    .Navbar-Items {
         width: 100%;
     }
-
-    .Navbar-Items > ul{
+    .Navbar-Items>ul {
         padding: 0px;
         margin: 0px;
         height: 100%;
         justify-content: space-between;
     }
-
-    .container{
+    .container {
         margin-top: 123px;
     }
 }

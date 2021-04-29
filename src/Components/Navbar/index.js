@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import Firebase from '../../Class/Firebase'
-import { ConnectToRedux } from '../ConnectToRedux'
+import React, { useState } from 'react'
 import { FrmSettings } from '../Forms/FrmSettings'
 import { Popover } from '../Popover'
 import { Computer } from './Computer'
 import { Movil } from './Movil'
 
-const Index = ConnectToRedux(({ changeUser, User }) => {
+const Index = () => {
 
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -14,21 +12,15 @@ const Index = ConnectToRedux(({ changeUser, User }) => {
         setAnchorEl(anchorEl === null ? currentTarget : null);
     }
 
-    useEffect(() => {
-        Firebase.checkoutUser().then(resp => {
-            changeUser(resp);
-        })
-    })
-
     return (
         <nav>
             <Computer handleMouseClick={handleMouseClick} />
             <Movil handleMouseClick={handleMouseClick} />
             <Popover anchorEl={anchorEl} onClose={handleMouseClick}>
-                <FrmSettings User={User} />
+                <FrmSettings />
             </Popover>
         </nav>
     )
-})
+}
 
 export default Index;

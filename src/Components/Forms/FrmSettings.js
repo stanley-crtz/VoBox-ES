@@ -1,6 +1,7 @@
 import { Avatar } from '@material-ui/core';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { ConnectToRedux } from '../ConnectToRedux';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export const FrmSettings = ({ User }) => {
+export const FrmSettings = ConnectToRedux(({ User }) => {
 
     const classes = useStyles();
 
@@ -41,4 +42,4 @@ export const FrmSettings = ({ User }) => {
             </div>
         </div>
     )
-}
+})
