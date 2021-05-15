@@ -104,7 +104,7 @@ export const Step2 = ({ handleNext, handleBack, activeStep, steps, classes, setI
                     setInformationRegister((val) => (
                         {
                             method: 'EmailAndPassword',
-                            information: { ...val.information, Email: user.Email }
+                            information: { ...val.information, Email: user.Email, uid: resp.user.uid }
                         }
                     ))
                     Swal.close();

@@ -1,13 +1,13 @@
 import Firebase from 'firebase';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCLuVzPR9-XVbcmND9X0kD35dscbOU30Lg",
-    authDomain: "vobox-es.firebaseapp.com",
-    projectId: "vobox-es",
-    storageBucket: "vobox-es.appspot.com",
-    messagingSenderId: "949773828107",
-    appId: "1:949773828107:web:bc97d3c106ab6984c6070e"
-};
+    apiKey: "AIzaSyBgjdc1oU50kDPM_NDASjZ3a2h3yfImuMk",
+    authDomain: "svoes-ba458.firebaseapp.com",
+    projectId: "svoes-ba458",
+    storageBucket: "svoes-ba458.appspot.com",
+    messagingSenderId: "712285857396",
+    appId: "1:712285857396:web:a54a2148b4ec068a239321"
+}
 
 const connectFirebase = Firebase.initializeApp(firebaseConfig);
 

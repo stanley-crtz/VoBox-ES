@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         outline: 'none',
         padding: theme.spacing(2, 4, 3),
-        width: '90%'
+        maxWidth: '90%'
     },
 }));
 

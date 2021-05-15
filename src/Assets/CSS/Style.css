@@ -1,682 +1,780 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 section.loginPage {
-    align-items: center;
-    background-color: rgb(238, 237, 236);
-    display: flex;
-    height: 100vh;
-    justify-content: center;
+  align-items: center;
+  background-color: rgb(238, 237, 236);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
 }
 
 .flex1 {
-    flex: 1;
+  flex: 1;
 }
 
 .flex2 {
-    flex: 1.5;
+  flex: 1.5;
 }
 
 .center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .frmLogin {
-    align-items: center;
-    background-color: #fff;
-    /* background-color: #3b83ed; */
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    padding: 10px;
-    -webkit-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.39);
-    -moz-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.39);
-    box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.39);
+  align-items: center;
+  background-color: #fff;
+  /* background-color: #3b83ed; */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.39);
+  box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.39);
 }
 
-.frmLogin>img {
-    background-color: #fff;
-    /* background-color: #3b83ed; */
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    margin: 10px;
-    margin-top: -15%;
-    padding: 10px;
-    width: 70%;
+.frmLogin > img {
+  background-color: #fff;
+  /* background-color: #3b83ed; */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin: 10px;
+  margin-top: -15%;
+  padding: 10px;
+  width: 70%;
 }
 
 .Input {
-    align-items: center;
-    background-color: rgb(238, 237, 236);
-    border-radius: 10px;
-    display: flex;
-    margin: 5px;
-    max-width: 300px;
-    padding: 5px;
-    width: 100%;
+  align-items: center;
+  background-color: rgb(238, 237, 236);
+  border-radius: 10px;
+  display: flex;
+  margin: 5px;
+  max-width: 300px;
+  padding: 5px;
+  width: 100%;
 }
 
 .left {
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
 }
 
 .icon {
-    color: rgb(182, 181, 179);
+  color: rgb(182, 181, 179);
 }
 
 .forgetPassword {
-    margin: 10px;
-    color: #6faaf7;
+  margin: 10px;
+  color: #6faaf7;
 }
 
 .line {
-    background-color: #dadde1;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 1px;
-    width: 90%;
+  background-color: #dadde1;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 1px;
+  width: 90%;
 }
 
 .line-vertical {
-    background-color: #dadde1;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 1px;
+  background-color: #dadde1;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1px;
 }
 
-.Input>.left>input {
-    background: transparent;
-    border: none;
-    font-size: 14px;
-    height: 20px;
-    outline: none;
-    width: 100%;
+.Input > .left > input {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  height: 20px;
+  outline: none;
+  width: 100%;
 }
 
-input[type="submit"], input[type="reset"], input[type="button"] {
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-    height: 40px;
-    margin: 10px;
-    max-width: 300px;
-    outline: none;
-    outline-offset: none;
-    width: 100%;
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  height: 40px;
+  margin: 10px;
+  max-width: 300px;
+  outline: none;
+  outline-offset: none;
+  width: 100%;
 }
 
-input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
-    cursor: pointer;
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  cursor: pointer;
 }
 
 .loginTitle {
-    color: #3578f2;
-    font-size: 40px;
-    font-weight: bold;
+  color: #3578f2;
+  font-size: 40px;
+  font-weight: bold;
 }
 
-.loginPage>.flex1>.content {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
+.loginPage > .flex1 > .content {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
 }
 
-.loginPage>.flex1>.content>p {
-    font-size: 20px;
+.loginPage > .flex1 > .content > p {
+  font-size: 20px;
 }
 
 .success {
-    color: white;
-    background-color: #3578f2;
-    transition: 0.5s;
+  color: white;
+  background-color: #3578f2;
+  transition: 0.5s;
 }
 
 .createAcountButton {
-    color: white;
-    background-color: #53b72a;
-    max-width: 200px !important;
-    transition: 0.5s;
+  color: white;
+  background-color: #53b72a;
+  max-width: 200px !important;
+  transition: 0.5s;
 }
 
-.success:hover, .createAcountButton:hover {
-    -webkit-box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
-    -moz-box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
-    box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
-    transition: 0.5s;
+.success:hover,
+.createAcountButton:hover {
+  -webkit-box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
+  box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
+  transition: 0.5s;
 }
 
 .Cards {
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.Cards, .Card {
-    display: flex;
-    margin: 10px;
-    align-items: center;
+.Cards,
+.Card {
+  display: flex;
+  margin: 10px;
+  align-items: center;
 }
 
 .Card {
-    border: 1px solid #dadde1;
-    border-radius: 10px;
-    min-width: 200px;
-    max-width: 300px;
-    padding: 10px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 10px;
 }
 
-.Card:hover, .Card-Active {
-    background-color: #3578f2;
-    cursor: pointer;
-    color: white;
-    transition: 0.5s;
+.Card:hover,
+.Card-Active {
+  background-color: #3578f2;
+  cursor: pointer;
+  color: white;
+  transition: 0.5s;
 }
 
 .Card-Content {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .Card-Title {
-    border-bottom: 1px solid #dadde1;
-    margin-bottom: 10px;
+  border-bottom: 1px solid #dadde1;
+  margin-bottom: 10px;
 }
 
 .containerTitleModal {
-    display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 100%;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
 }
 
 .LeftTitleModal {
-    flex: 1;
+  flex: 1;
 }
 
 .RightTitleModal {
-    /* flex: 1; */
-    text-align: right;
+  /* flex: 1; */
+  text-align: right;
 }
 
 .RightTitleModal:hover {
-    color: #dadde1;
-    cursor: pointer;
-    transition: 0.2s;
+  color: #dadde1;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .firebaseui-idp-text-long {
-    display: none !important;
+  display: none !important;
 }
 
 .firebaseui-idp-text-short {
-    display: table-cell !important;
-    text-align: center !important;
-    width: 100%;
+  display: table-cell !important;
+  text-align: center !important;
+  width: 100%;
 }
 
 .firebaseui-idp-text {
-    padding-left: 0px !important;
+  padding-left: 0px !important;
 }
 
 #firebaseui_container {
-    flex: 1;
+  flex: 1;
 }
 
 .container-type-register {
-    display: flex;
+  display: flex;
 }
 
 .firebase-email-container {
-    align-items: center;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .firebaseui-idp-button {
-    border-radius: 10px !important;
+  border-radius: 10px !important;
 }
 
 .hover:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .red {
-    color: red;
+  color: red;
 }
 
 .green {
-    color: green;
+  color: green;
 }
 
 .swal2-backdrop-show {
-    z-index: 2000 !important;
+  z-index: 2000 !important;
 }
 
 .AboutUser {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 700px;
 }
 
 .AboutUser .About {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .AboutPhoto {
-    display: flex;
-    position: relative;
-    flex: 1;
-    justify-content: center;
+  display: flex;
+  position: relative;
+  flex: 1;
+  justify-content: center;
 }
 
-.AboutPhoto>input[type="file"] {
-    position: absolute;
-    border-radius: 60px;
-    width: 120px;
-    height: 120px;
-    opacity: 0;
+.AboutPhoto > input[type="file"] {
+  position: absolute;
+  border-radius: 60px;
+  width: 120px;
+  height: 120px;
+  opacity: 0;
 }
 
-.AboutPhoto>input[type="file"]:hover {
-    cursor: pointer;
+.AboutPhoto > input[type="file"]:hover {
+  cursor: pointer;
 }
 
-.AboutPhoto>img {
-    border-radius: 60px;
-    width: 120px;
-    height: 120px;
+.AboutPhoto > img {
+  border-radius: 60px;
+  width: 120px;
+  height: 120px;
 }
 
 .AboutInfo {
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.AboutInfo>.input {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.AboutInfo > .input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .AboutButtons {
-    display: flex;
-    flex: 1;
-    justify-content: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
 }
 
 nav {
-    background-color: #5098e0;
-    color: white;
-    display: flex;
-    flex: 1;
-    height: 50px;
-    justify-content: space-between;
-    padding: 5px;
-    border-bottom: 1px solid #5098e0;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
+  background-color: #5098e0;
+  color: white;
+  display: flex;
+  flex: 1;
+  height: 50px;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid #5098e0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 }
 
-nav>div {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 100%;
+nav > div {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100%;
 }
 
 .Navbar-Settings {
-    height: 80%;
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    border-radius: 50px;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 50px;
 }
 
 .Navbar-Settings:hover {
-    cursor: pointer;
-    background-color: gray;
+  cursor: pointer;
+  background-color: gray;
 }
 
 .Navbar-Icon {
-    display: contents;
+  display: contents;
 }
 
-.Navbar-Icon>img:hover {
-    cursor: pointer;
+.Navbar-Icon > img:hover {
+  cursor: pointer;
 }
 
-.Navbar-Icon>img {
-    border-radius: 10px;
-    max-width: 150px;
-    height: 100%;
+.Navbar-Icon > img {
+  border-radius: 10px;
+  max-width: 150px;
+  height: 100%;
 }
 
 .Navbar-Items {
-    height: 100%;
+  height: 100%;
 }
 
-.Navbar-Items>ul {
-    display: flex;
-    list-style: none;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.Navbar-Items > ul {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.Navbar-Items>ul>li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 100%;
-    width: 90px;
+.Navbar-Items > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100%;
+  width: 90px;
 }
 
-.Navbar-Items>ul>li>a:hover {
-    border-radius: 10px;
-    background-color: rgba(30, 86, 238, 0.5);
-    cursor: pointer;
-    transition: 1s;
+.Navbar-Items > ul > li > a:hover {
+  border-radius: 10px;
+  background-color: rgba(30, 86, 238, 0.5);
+  cursor: pointer;
+  transition: 1s;
 }
 
-.Navbar-Items>ul>li>a {
-    text-decoration: none;
-    color: white;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.Navbar-Items > ul > li > a {
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Rute-Active {
-    color: white;
-    border-bottom: 4px solid #fff;
+  color: white;
+  border-bottom: 4px solid #fff;
 }
 
 .Rute-Active:hover {
-    border-radius: 0px !important;
-    background: transparent !important;
+  border-radius: 0px !important;
+  background: transparent !important;
 }
 
 .container {
-    position: absolute;
-    margin-top: 60px;
-    width: 100%;
+  position: absolute;
+  margin-top: 60px;
+  width: 100%;
 }
 
 .Computer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Movil {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    display: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  display: none;
 }
 
 .Movil .Content-movil-nav {
-    align-items: center;
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .FrmSettings {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  max-width: 100%;
 }
 
-.FrmSettings>.AboutUser {
-    flex: 1;
-    justify-content: center;
-    align-items: center;
+.FrmSettings > .AboutUser {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 }
 
-.FrmSettings>.AboutUser>div {
-    margin-bottom: 10px;
+.FrmSettings > .AboutUser > div {
+  margin-bottom: 10px;
 }
 
-.FrmSettings>.AboutUser>span:nth-child(3) {
-    margin-bottom: 10px;
+.FrmSettings > .AboutUser > span:nth-child(3) {
+  margin-bottom: 10px;
 }
 
-.FrmSettings>.AboutUser>input[type="button"] {
-    width: 200px;
-    font-size: 14px;
-    height: 30px;
-    background-color: transparent;
-    border: 1px solid #3e88fe;
+.FrmSettings > .AboutUser > input[type="button"] {
+  width: 200px;
+  font-size: 14px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid #3e88fe;
 }
 
-.FrmSettings>.AboutUser>input[type="button"]:hover {
-    background-color: #3e88fe !important;
-    cursor: pointer;
+.FrmSettings > .AboutUser > input[type="button"]:hover {
+  background-color: #3e88fe !important;
+  cursor: pointer;
 }
 
 /* SPLASH SCRENN */
 
-.Splash{
-    background: #1DA1F2;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Splash {
+  background: #1da1f2;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.Splash > #icon{
-    --size: 200px;
-	
-	transform: translate(-50%,-50%);
-	width: var(--size);
+.Splash > #icon {
+  --size: 200px;
+
+  transform: translate(-50%, -50%);
+  width: var(--size);
 }
 
 .cover {
-	background: #1DA1F2;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	animation: fade-out 2s /*infinite*/;
+  background: #1da1f2;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: fade-out 2s /*infinite*/;
 }
 
 .cover > #icon {
-	--size: 200px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	width: var(--size);
-	
-	animation: zoom-in 1s /*infinite*/;
-	animation-delay: 1s;
+  --size: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--size);
+
+  animation: zoom-in 1s /*infinite*/;
+  animation-delay: 1s;
 }
 
-.Settings{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
+.Settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
-.Settings > span{
-    width: min-content;
+.Settings > span {
+  width: min-content;
 }
 
-.Settings > .My-Profile{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 400px;
-    height: 80px;
-    align-items: center;
-    border: 1px solid #dadde1;
-    padding-left: 10px;
+.Settings > .My-Profile {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  height: 80px;
+  align-items: center;
+  border: 1px solid #dadde1;
+  padding-left: 10px;
 }
 
-.Settings > .My-Profile:hover{
-    background-color: #dadde1;
-    cursor: pointer;
-    user-select: none;
+.Settings > .My-Profile:hover {
+  background-color: #dadde1;
+  cursor: pointer;
+  user-select: none;
 }
 
-.Settings > .My-Profile > .About{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin-left: 10px;
+.Settings > .My-Profile > .About {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 10px;
 }
 
-.Settings > .Suggestion{
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 400px;
+.Settings > .Suggestion {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 400px;
 }
 
-.Settings > .Suggestion > .Suggestion-Item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 150px;
-    width: 100%;
-    height: 70px;
-    margin: 8px;
-    border-radius: 20px;
-    border: 1px solid #dadde1;
+.Settings > .Suggestion > .Suggestion-Item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 150px;
+  width: 100%;
+  height: 70px;
+  margin: 8px;
+  border-radius: 20px;
+  border: 1px solid #dadde1;
 }
 
-.Settings > .Suggestion > .Suggestion-Item:hover{
-    background-color: #dadde1;
-    cursor: pointer;
-    user-select: none;
+.Settings > .Suggestion > .Suggestion-Item:hover {
+  background-color: #dadde1;
+  cursor: pointer;
+  user-select: none;
 }
 
-.Settings > .Settings-Items{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100%;
-    max-width: 400px;
-    border: 1px solid #dadde1;
+.Settings > .Settings-Items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  border: 1px solid #dadde1;
 }
 
-.Settings > .Settings-Items > .Settings-Item{
-    display: flex;
-    align-items: center;
-    height: 50px;
-    padding-left: 10px;
-    border: 1px solid #dadde1;
-    width: 100%;
-    max-width: 390px;
-    user-select: none;
+.Settings > .Settings-Items > .Settings-Item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-left: 10px;
+  border: 1px solid #dadde1;
+  width: 100%;
+  max-width: 390px;
+  user-select: none;
 }
 
-.Settings > .Settings-Items > .Settings-Item:hover{
-    background-color: #dadde1;
-    cursor: pointer;
+.Settings > .Settings-Items > .Settings-Item:hover {
+  background-color: #dadde1;
+  cursor: pointer;
+}
+
+.NewActivity {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead {
+  border-bottom: 2px solid rgb(42, 147, 196);
+}
+
+thead > tr {
+  word-wrap: break-word;
+  height: 50px;
+}
+
+tbody > tr:nth-child(1) > td {
+  height: 50px;
+  border-top: none;
+}
+
+tbody > tr > td:nth-child(1) {
+  border: none;
+  border-right: 2px solid rgb(42, 147, 196);
+}
+
+tbody > tr > td {
+  border: 1px solid rgb(155, 151, 151);
+  height: 50px;
+  padding: 5px;
+}
+
+tbody > tr > td:nth-child(1):hover {
+  cursor: default;
+  background-color: transparent;
+}
+
+tbody > tr > td:hover {
+  cursor: pointer;
+  background-color: rgb(196, 194, 194);
+}
+
+.containerTables {
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.containerTables::-webkit-scrollbar {
+  display: none;
+}
+
+.containerTables > table {
+  min-width: 700px;
+}
+
+.tableSon {
+  height: calc(75vh - 100px);
+  min-width: 700px;
+  overflow-y: scroll;
+}
+
+.tableSon::-webkit-scrollbar {
+  display: none;
+}
+
+.timeSelected {
+  background: rgb(42, 147, 196);
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  animation: opacity 1s;
+}
+
+@keyframes opacity {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
 }
 
 @keyframes zoom-in {
-	50% {
-		width: var(--size);
-	}
-	60% {
-		width: calc(var(--size) * 0.9);
-	}
-	100% {
-		width: 250%;
-	}
+  50% {
+    width: var(--size);
+  }
+  60% {
+    width: calc(var(--size) * 0.9);
+  }
+  100% {
+    width: 250%;
+  }
 }
 @keyframes fade-out {
-	0%, 85% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
+  0%,
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: 1068px) {
-    .loginPage>div:nth-child(1) {
-        display: none;
-    }
-    .container-type-register {
-        flex-direction: column;
-    }
-    .AboutUser .About {
-        flex-direction: column;
-    }
+  .loginPage > div:nth-child(1) {
+    display: none;
+  }
+  .container-type-register {
+    flex-direction: column;
+  }
+  .AboutUser .About {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 650px) {
-    .Movil {
-        display: flex;
-    }
-    .Computer {
-        display: none;
-    }
-    nav {
-        height: 110px;
-    }
-    .Navbar-Items {
-        width: 100%;
-    }
-    .Navbar-Items>ul {
-        padding: 0px;
-        margin: 0px;
-        height: 100%;
-        justify-content: space-between;
-    }
-    .container {
-        margin-top: 123px;
-        overflow-y: scroll;
-        max-height: calc(100vh - 123px);
-        overflow-x: hidden;
-    }
+  .Movil {
+    display: flex;
+  }
+  .Computer {
+    display: none;
+  }
+  nav {
+    height: 110px;
+  }
+  .Navbar-Items {
+    width: 100%;
+  }
+  .Navbar-Items > ul {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    justify-content: space-between;
+  }
+  .container {
+    margin-top: 123px;
+    overflow-y: scroll;
+    max-height: calc(100vh - 123px);
+    overflow-x: hidden;
+  }
 }
 
 @media screen and (max-width: 460px) {
-
-    .Navbar-Items>ul>li{
-        width: 100%;
-    }
-
+  .Navbar-Items > ul > li {
+    width: 100%;
+  }
 }
