@@ -14,6 +14,10 @@ import EventIcon from "@material-ui/icons/Event";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 
 export const Icons = {
   User: <AccountCircleIcon />,
@@ -31,5 +35,9 @@ export const Icons = {
   Notification: <NotificationsIcon />,
   Exit: <ExitToAppIcon />,
   Add: <AddCircleIcon />,
+  Location: <LocationOnIcon />,
+  ArrowUp: <ArrowUpwardIcon />,
+  ArrowDown: <ArrowDownwardIcon />,
+  Reset: <RotateLeftIcon />
 };
 

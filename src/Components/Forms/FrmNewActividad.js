@@ -10,7 +10,7 @@ export const FrmNewActividad = () => {
   const [Activity, setActivity] = useState({
     Title: "",
     Description: "",
-    Workdays: [],
+    Workdays: []
   });
 
   useEffect(() => {
