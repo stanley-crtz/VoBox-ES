@@ -819,6 +819,16 @@ tbody>tr>td:hover {
   border-radius: 20px;
 }
 
+.Parameters{
+  flex: 1;
+}
+
+.FrmActividad{
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
 @keyframes opacity {
   0% {
     opacity: 0;

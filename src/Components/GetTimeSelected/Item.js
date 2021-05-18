@@ -63,22 +63,14 @@ const ConfirmActivity = ({ desde, hasta, getConfirm, closeModal }) => {
 
       </div>
       <input className="success" type="button" value="Confirmar" onClick={handleClickConfirm} />
-      {/* <p>
-        Tu actividad esta de {desde > 12 ? desde - 12 : desde}:00{" "}
-        {desde > 11 ? "pm" : "am"} a {contador > 12 ? contador - 12 : contador}
-        :00 {contador > 11 ? "pm" : "am"}, ¿Si deseas aumentar las horas pulsa
-        en aumentar o decrementar?
-      </p>
-      <input type="button" value="Aumentar" onClick={() => aumentar()} />
-      <input type="button" value="Decrementar" onClick={() => decrementar()} />
-      <input type="button" value="Defecto" onClick={() => reset()} />
-      <input type="button" value="Guardar" onClick={handleClickConfirm} /> */}
+
     </div>
   );
 };
 
 export const Item = ({
   handleAddTime,
+  RemoveItem,
   data: {
     value: { isActive, hours, stateDay, hoursPlus, stateDayPlus },
   },
@@ -89,6 +81,8 @@ export const Item = ({
   const handleAddActivity = () => setOpenModal(true);
 
   const confirmAddActivity = (e) => handleAddTime(i, e);
+
+  const handleRemoveActivity = () => RemoveItem(i);
 
   if (isActive === null)
     return (
@@ -111,7 +105,7 @@ export const Item = ({
 
   if (isActive)
     return (
-      <td rowSpan={hoursPlus - hours}>
+      <td rowSpan={hoursPlus - hours} onClick={handleRemoveActivity}>
         <div class="timeSelected">
           <p>{`${hours > 12 ? hours - 12 : hours}:00 ${stateDay} - ${hoursPlus > 12 ? hoursPlus - 12 : hoursPlus
             }:00 ${stateDayPlus}`}</p>

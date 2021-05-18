@@ -68,7 +68,7 @@ export const Login = () => {
             onChange={handleChange}
           />
           <input className="success" type="submit" value="Ingresar" />
-          <NavLink to="/Olvide" className="forgetPassword">
+          <NavLink to="/Recuperar" className="forgetPassword">
             ¿Olvidaste tu contraseña?
           </NavLink>
           <Line />

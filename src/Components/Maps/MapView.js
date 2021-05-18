@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import { Marker } from "./Marker";
 
 export const MapView = ({ coordinates, centerMap, getCoordinates }) => {
+
   return (
     <Map
       zoom={10}
@@ -15,7 +16,9 @@ export const MapView = ({ coordinates, centerMap, getCoordinates }) => {
         attribution="&copy; VoBox ES"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker coor={coordinates} />
+      {
+        coordinates && <Marker coor={coordinates} />
+      }
     </Map>
   );
 };

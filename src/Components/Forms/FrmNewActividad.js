@@ -30,6 +30,8 @@ export const FrmNewActividad = () => {
   const getTime = (e) =>
     setActivity({ ...Activity, Workdays: [...Activity.Workdays, e] });
 
+  const removeTime = (e) => setActivity({ ...Activity, Workdays: e });
+
   return (
     <>
       <form className="FrmActividad" onSubmit={handleSubmit}>
@@ -37,8 +39,9 @@ export const FrmNewActividad = () => {
         <Input iconType="user" placeholder="Titulo" />
         <p>Descripcion</p>
         <textarea />
-        <p>Horarios</p>
-        <button onClick={() => setOpenModal(true)}>Open</button>
+        <label>Selecciona el horario</label>
+        <input type="button" value="Open" onClick={() => setOpenModal(true)} />
+        <input type="submit" value="Guardar" className="success" />
       </form>
       <Modal
         open={openModal}
@@ -49,6 +52,8 @@ export const FrmNewActividad = () => {
           time={time}
           getArrayTime={getArrayTime}
           getTime={getTime}
+          activityWorkdays={Activity.Workdays}
+          removeTime={removeTime}
         />
       </Modal>
     </>

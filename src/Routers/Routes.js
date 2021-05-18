@@ -21,13 +21,11 @@ export const Routes = () => {
     <Switch>
       {splash.splash && <SplashScreen onClose={setSplash} />}
 
-      {splash.rutes && (
-        <>
-          <Route exact path="/Login" component={Login} />
-          <Route exact path="/Verifiqued" component={Verifiqued} />
-          <Route exact path="/**" component={SubRutes} />
-        </>
-      )}
+      <Route exact path="/Login" component={Login} />
+      <Route exact path="/Verifiqued" component={Verifiqued} />
+      <Route exact path="/Recuperar" component={() => <h1>hola</h1>} />
+      <Route exact path="**" component={SubRutes} />
+
     </Switch>
   );
 };
