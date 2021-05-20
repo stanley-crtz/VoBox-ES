@@ -1,8 +1,5 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
-import { useHistory } from "react-router-dom";
-import Swal from "sweetalert2";
-import Firebase from "../../Class/Firebase";
 import { Stepper } from "../Stepper";
 import { Step1 } from "./Step1";
 import { Step2 } from "./Step2";
@@ -22,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
 const Index = () => {
   const classes = useStyles();
 
-  const history = useHistory();
 
   const [activeStep, setActiveStep] = React.useState(0);
   const [informationRegister, setInformationRegister] = React.useState({
@@ -34,36 +30,6 @@ const Index = () => {
     method: "",
   });
 
-  const pushNewUser = (e) => {
-    Swal.fire({
-      title: `Creando el usuario ${e.Name}...`,
-      allowOutsideClick: false,
-      showConfirmButton: false,
-      willOpen: () => {
-        Swal.showLoading();
-      },
-    });
-
-    const info = {
-      ...informationRegister,
-      information: { ...informationRegister.information, ...e },
-    };
-
-    setInformationRegister(info);
-
-    Firebase.insertUser(info.information)
-      .then((resp) => {
-        Firebase.updateUser({
-          displayName: info.information.Name,
-          photoURL: info.information.Photo,
-        }).then((result) => {
-          Swal.close();
-          history.push("/");
-        });
-      })
-      .catch((err) => alert("error"));
-  };
-
   const handleNext = () =>
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
 
@@ -72,8 +38,8 @@ const Index = () => {
 
   const Steps = [
     "Tipo de cuenta",
-    "Tipo de inicio de sesión",
     "Cuentanos sobre ti",
+    "Tipo de inicio de sesión",
     "Validación de Correo",
   ];
 
@@ -94,6 +60,7 @@ const Index = () => {
       steps={Steps}
       classes={classes}
       setInformationRegister={setInformationRegister}
+      // sendingInformation={pushNewUser}
     />,
     <Step3
       handleBack={handleBack}
@@ -101,7 +68,7 @@ const Index = () => {
       activeStep={activeStep}
       steps={Steps}
       classes={classes}
-      sendingInformation={pushNewUser}
+      setInformationRegister={setInformationRegister}
     />,
     <Step4 informationRegister={informationRegister} />,
   ];

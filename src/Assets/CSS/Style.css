@@ -7,6 +7,33 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.content-recover-and-confirm{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1da1f2;
+}
+
+.content-recover-and-confirm > .content-son{
+  width: 50%;
+  border: 1px solid #fff;
+  margin-top: 10px;
+  border-radius: 10px;
+  height: min-content;
+  color: white;
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-recover-and-confirm > .content-son > h1{
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+
 section.loginPage {
   align-items: center;
   background-color: rgb(238, 237, 236);
@@ -89,8 +116,7 @@ section.loginPage {
 
 .line-vertical {
   background-color: #dadde1;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
   width: 1px;
 }
 

@@ -1,187 +1,206 @@
-import { Button } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
-import Firebase from 'firebase';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { Config } from '../../Config';
-import { Line } from '../Line';
-import { InputPopover } from '../InputPopover';
-import Swal from 'sweetalert2';
-import FirebaseMethods from '../../Class/Firebase'
+import React, { useState } from "react";
+import { Button } from "@material-ui/core";
+import Swal from "sweetalert2";
+import Firebase from "../../Class/Firebase";
+import { InputPopover } from "../InputPopover";
 
 export const Step2 = ({ handleNext, handleBack, activeStep, steps, classes, setInformationRegister }) => {
 
-    const [user, setUser] = useState({
-        Email: '',
-        Password: ''
-    })
+  const DefaultURLPhoto = "https://static.wikia.nocookie.net/blackclover/images/8/80/Black_Asta_Descontrolado.png/revision/latest?cb=20201124054144&path-prefix=es";
 
-    const [validation, setValidation] = useState({
-        emailTest: {
-            state: null,
-            message: 'Dirección de correo no valido'
-        },
-        Password: {
-            lenghtTest: {
-                state: null,
-                message: 'Debe contener un minimo de 6 y un maximo de 64 caracteres'
-            },
-            lowercaseTest: {
-                state: null,
-                message: 'Debe contener por lo menos una minuscula'
-            },
-            uppercaseTest: {
-                state: null,
-                message: 'Debe contener por lo menos una mayuscula'
-            },
-            numbersTest: {
-                state: null,
-                message: 'Debe contener por lo menos un caracter numerico'
-            },
-            specialCharacterTest: {
-                state: null,
-                message: 'Debe contener por lo menos un caracter especial'
-            }
-        }
-    })
+  const [user, setUser] = useState({
+    Photo: "",
+    Name: "",
+    Address: "",
+    NIT: "",
+    DUI: "",
+  });
 
-    const uiConfig = {
-        signInFlow: 'popup',
-        signInOptions: [
-            Firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            Firebase.auth.FacebookAuthProvider.PROVIDER_ID
-        ]
-    };
+  const [validation, setValidation] = useState({
+    NameTest: {
+      state: null,
+      message: "Nombre no valido",
+    },
+    AddressTest: {
+      state: null,
+      message: "Direccion no valida",
+    },
+    DuiTest: {
+      state: null,
+      message: "DUI no valido",
+    },
+    NitTest: {
+      state: null,
+      message: "NIT no valido",
+    },
+  });
 
-    const handleChange = ({ target: { name, value } }) => {
+  const userTest = ({ Name, Address, DUI, NIT }) => {
+    //Pruebas de Nombre
+    const nameTest = /^[a-zA-Z ]{10,64}$/.test(Name);
 
-        setUser({ ...user, [name]: value })
-        userTest({ ...user, [name]: value });
+    //Pruebas de Direccion
+    const addressTest = /^.{3,}$/.test(Address);
 
+    //Pruebas de DUI
+    const duiTest = /^\d{8}-\d{1}$/.test(DUI);
+
+    //Pruebas de NIT
+    const nitTest = /^[0-9]{4}-[0-9]{6}-[0-9]{3}-[0-9]{1}$/.test(NIT);
+
+    setValidation((val) => ({
+      NameTest: { ...val.NameTest, state: nameTest },
+      AddressTest: { ...val.AddressTest, state: addressTest },
+      DuiTest: { ...val.DuiTest, state: duiTest },
+      NitTest: { ...val.NitTest, state: nitTest },
+    }));
+
+    return nameTest && addressTest && duiTest && nitTest;
+  };
+
+  const handleChange = ({ target: { name, value } }) => {
+    setUser({ ...user, [name]: value });
+    userTest({ ...user, [name]: value });
+  };
+
+  const handleChangePhoto = ({ target: input }) => {
+    const preview = document.getElementById("previewPhoto");
+
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        preview.src = e.target.result;
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      preview.src = DefaultURLPhoto;
     }
+  };
 
-    const userTest = ({ Email, Password }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        //Prueba de Email
-        const emailTest = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(Email);
+    const photo = document.getElementById("getPhoto");
 
-        //Pruebas de contraseña
-        const lenghtTest = /^.{6,64}$/.test(Password);
-        const lowercaseTest = /^(?=.*[a-z]).{0,64}$/.test(Password);
-        const uppercaseTest = /^(?=.*[A-Z]).{0,64}$/.test(Password);
-        const numbersTest = /^(?=.*[0-9]).{0,64}$/.test(Password);
-        const specialCharacterTest = /^(?=.*[ -/:-@[-`{-~]).{0,64}$/.test(Password);
+    Swal.fire({
+      title: "Cargando información...",
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      willOpen: () => {
+        Swal.showLoading();
+      },
+    });
 
-        setValidation(val => (
-            {
-                emailTest: { ...val.emailTest, state: emailTest },
-                Password: {
-                    lenghtTest: { ...val.Password.lenghtTest, state: lenghtTest },
-                    lowercaseTest: { ...val.Password.lowercaseTest, state: lowercaseTest },
-                    uppercaseTest: { ...val.Password.uppercaseTest, state: uppercaseTest },
-                    numbersTest: { ...val.Password.numbersTest, state: numbersTest },
-                    specialCharacterTest: { ...val.Password.specialCharacterTest, state: specialCharacterTest }
-                }
-            }
-        ))
-
-        return emailTest && lenghtTest && lowercaseTest && uppercaseTest && numbersTest && specialCharacterTest
+    if (userTest(user) && photo.files[0]) {
+      Firebase.uploadPhotoProfile(photo.files[0], user.Name + new Date())
+        .then((resp) => {
+          resp.ref.getDownloadURL().then((url) => {
+            setInformationRegister(val => ({...val, information: {...val.information, ...user, Photo: url }}));
+            Swal.close();
+            handleNext();
+          });
+        })
+        .catch((err) => alert(JSON.stringify(err)));
+    } else {
+      Swal.fire(
+        "Advertencia",
+        "Debe de rellenar cada uno de los campos",
+        "info"
+      );
     }
+  };
 
-    const validatorState = () => {
-
-        if (userTest(user)) {
-            Swal.fire({
-                title: 'Cargando información...',
-                allowOutsideClick: false,
-                showConfirmButton: false,
-                willOpen: () => {
-                    Swal.showLoading();
-                }
-            })
-
-            FirebaseMethods.createUser(user.Email, user.Password)
-                .then(resp => {
-                    setInformationRegister((val) => (
-                        {
-                            method: 'EmailAndPassword',
-                            information: { ...val.information, Email: user.Email, uid: resp.user.uid }
-                        }
-                    ))
-                    Swal.close();
-                    handleNext();
-                })
-                .catch(err => {
-                    Swal.fire('Error', 'Fallo al cargar la información', 'error');
-                    console.error(err);
-                })
-
-        }
-        else {
-            alert('fallo')
-        }
-
-    }
-
-    useEffect(() => {
-
-        const elements = Array.prototype.slice.call(document.getElementsByClassName('firebaseui-idp-text-long'));
-
-        for (const element of elements) {
-
-            element.remove();
-        }
-
-    }, [])
-
-    return (
-        <>
-            <div className="container-type-register">
-                <div className="firebase-email-container">
-                    <InputPopover
-                        iconType="User"
-                        placeholder="Ingrese su correo"
-                        type="text"
-                        data={validation.emailTest}
-                        name="Email"
-                        onChange={handleChange}
-                        value={user.Email}
-                    />
-                    <InputPopover
-                        iconType="Password"
-                        placeholder="Ingrese su contraseña"
-                        type="password"
-                        data={validation.Password}
-                        bucle={true}
-                        name="Password"
-                        onChange={handleChange}
-                        value={user.Password}
-                    />
-                    <div className={classes.actionsContainer}>
-                        <div>
-                            <Button
-                                disabled={activeStep === 0}
-                                onClick={handleBack}
-                                className={classes.button}
-                            >
-                                Atras
-                    </Button>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={validatorState}
-                                className={classes.button}
-                            >
-                                {activeStep === steps.length - 1 ? 'Terminado' : 'Siguiente'}
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-                <Line type="line-vertical" />
-                <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={Config.connectFirebase.auth()} />
-
+  return (
+    <div className="AboutUser">
+      <form onSubmit={handleSubmit}>
+        <div className="About">
+          <div className="AboutPhoto">
+            <img src={DefaultURLPhoto} alt="Foto de perfil" id="previewPhoto" />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleChangePhoto}
+              id="getPhoto"
+            />
+          </div>
+          <div className="AboutInfo">
+            <div className="input">
+              <InputPopover
+                iconType="User"
+                placeholder="Ingrese su nombre"
+                type="text"
+                data={validation.NameTest}
+                name="Name"
+                onChange={handleChange}
+                value={user.Name}
+              />
             </div>
-
-
-        </>
-    )
-}
+            <div className="input">
+              <InputPopover
+                iconType="Home"
+                placeholder="Ingrese su direccion"
+                type="text"
+                data={validation.AddressTest}
+                name="Address"
+                onChange={handleChange}
+                value={user.Address}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="About">
+          <div className="AboutInfo">
+            <div className="input">
+              <InputPopover
+                iconType="Document"
+                placeholder="Ingrese su DUI"
+                type="text"
+                data={validation.DuiTest}
+                name="DUI"
+                onChange={handleChange}
+                value={user.DUI}
+              />
+            </div>
+          </div>
+          <div className="AboutInfo">
+            <div className="input">
+              <InputPopover
+                iconType="Document"
+                placeholder="Ingrese su NIT"
+                type="text"
+                data={validation.NitTest}
+                name="NIT"
+                onChange={handleChange}
+                value={user.NIT}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className={classes.actionsContainer}
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <div>
+            <Button
+              disabled={activeStep === 0}
+              onClick={handleBack}
+              className={classes.button}
+            >
+              Atras
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              onClick={handleSubmit}
+            >
+              {activeStep === steps.length - 1 ? "Terminado" : "Siguiente"}
+            </Button>
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+};

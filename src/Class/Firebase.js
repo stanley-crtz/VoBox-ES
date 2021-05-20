@@ -10,11 +10,15 @@ class Firebase {
         return this.db.auth().createUserWithEmailAndPassword(email, password);
     }
 
-    sendEmailVerification = () => {
-        return this.db.auth().currentUser.sendEmailVerification();
-    }
+    sendEmailVerification = () => this.db.auth().currentUser.sendEmailVerification();
+
+    sendPasswordResetVerification = (email) => this.db.auth().sendPasswordResetEmail(email);
 
     verifyEmail = (code) => this.db.auth().applyActionCode(code);
+
+    verifiedPasswordReset = (code) => this.db.auth().verifyPasswordResetCode(code);
+
+    confirmPasswordReset = (code, newPassword) => this.db.auth().confirmPasswordReset(code, newPassword);
 
     uploadPhotoProfile = (img, name) => {
 

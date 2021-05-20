@@ -12,15 +12,13 @@ export const SplashScreen = ConnectToRedux(({ changeUser, onClose }) => {
 
         Config.connectFirebase.auth().onAuthStateChanged((user) => {
 
-            if (!!user) {
+            if (!!user && user.emailVerified) {
                 Firebase.__get('Users', user.uid).then(resp => {
-                    console.log(resp);
                     changeUser(resp);
                     setAnimation('cover');
                     onClose((val) => ({ ...val, rutes: true }));
                 })
             } else {
-                console.log(user);
                 changeUser(user);
                 setAnimation('cover');
                 onClose((val) => ({ ...val, rutes: true }));
