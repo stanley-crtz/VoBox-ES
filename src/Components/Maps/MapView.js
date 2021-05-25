@@ -11,6 +11,7 @@ export const MapView = ({ coordinates, centerMap, getCoordinates }) => {
       crollWheelZoom={false}
       center={centerMap}
       onclick={({ latlng: { lat, lng } }) => getCoordinates({ lat, lng })}
+      style={{flex: 1}}
     >
       <TileLayer
         attribution="&copy; VoBox ES"

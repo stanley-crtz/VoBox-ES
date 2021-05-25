@@ -359,7 +359,7 @@ nav {
   border-bottom: 1px solid #5098e0;
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 34;
 }
 
 nav>div {
@@ -643,6 +643,7 @@ nav>div {
 
 .NewActivity {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   flex: 1;
   height: 100%;
@@ -722,6 +723,11 @@ tbody>tr>td:hover {
   justify-content: center;
   color: #fff;
   animation: opacity 1s;
+  text-align: center;
+}
+
+.timeSelected > p{
+  margin: 5px
 }
 
 .ConfirmActivity {
@@ -855,6 +861,141 @@ tbody>tr>td:hover {
   flex-direction: column;
 }
 
+/* Quiz */
+
+.Quiz{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+
+.Quiz-content{
+  border: 1px solid #dadde1;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+}
+
+.Quiz-content > input[type="text"]{
+  height: 50px;
+  font-size: 40px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+}
+
+.Quiz-content > .textarea{
+  text-align: start;
+  width: 100%;
+  min-height: max-content;
+  outline: none;
+}
+
+.Quiz-content > .textarea:hover{
+  cursor: text;
+}
+
+.Quiz-content > .textarea:empty::before{
+  position: absolute;
+  content: "Descripcion del formulario";
+  color: #757575;
+}
+
+.ultime-element-quiz{
+  margin-bottom: 20px;
+}
+
+.Questions{
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+.Question{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 10px;
+  border-left: 4px solid #3578f2;
+  margin-bottom: 20px;
+  transition: 1s;
+}
+
+.Question > input[type="text"]{
+  height: 40px;
+  font-size: 30px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+}
+
+.Responses{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.Responses > .Response{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: 1s;
+}
+
+.Responses > .Response > input[type="text"]{
+  height: 30px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+}
+
+.Responses > .Response > p{
+  color: #3578f2;
+}
+
+.Responses > .Response > p:hover{
+  cursor: pointer;
+}
+
+#Circle{
+  display: flex;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 1000px;
+  margin-right: 10px;
+}
+
+.AddQuestions{
+  display: flex;
+  justify-content: center;
+}
+
+.AddQuestions:hover{
+  cursor: pointer;
+}
+
+.IconAdd{
+  position: absolute;
+  margin-top: -6px;
+  z-index: 10px;
+  color: #dadde1;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.LineAdd{
+  width: 100%;
+  height: 10px;
+  border-radius: 20px;
+  background-color: #dadde1;
+}
+
 @keyframes opacity {
   0% {
     opacity: 0;
@@ -921,6 +1062,10 @@ tbody>tr>td:hover {
     overflow-y: scroll;
     max-height: calc(100vh - 123px);
     overflow-x: hidden;
+  }
+
+  .content-recover-and-confirm > .content-son{
+    width: 100%;
   }
 }
 
