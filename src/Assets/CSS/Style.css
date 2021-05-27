@@ -7,7 +7,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.content-recover-and-confirm{
+.flex-column {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-column>input[type="button"] {
+  width: 200px;
+}
+
+.content-recover-and-confirm {
   display: flex;
   flex: 1;
   justify-content: center;
@@ -15,7 +26,7 @@ body {
   background-color: #1da1f2;
 }
 
-.content-recover-and-confirm > .content-son{
+.content-recover-and-confirm>.content-son {
   width: 50%;
   border: 1px solid #fff;
   margin-top: 10px;
@@ -28,7 +39,7 @@ body {
   flex-direction: column;
 }
 
-.content-recover-and-confirm > .content-son > h1{
+.content-recover-and-confirm>.content-son>h1 {
   text-align: center;
   width: 100%;
   border-bottom: 1px solid #fff;
@@ -726,7 +737,7 @@ tbody>tr>td:hover {
   text-align: center;
 }
 
-.timeSelected > p{
+.timeSelected>p {
   margin: 5px
 }
 
@@ -779,23 +790,23 @@ tbody>tr>td:hover {
   letter-spacing: 6px;
 }
 
-.Hour, .Minutes{
+.Hour, .Minutes {
   background-color: #3e88fe;
   color: #fff;
 }
 
-.Content_Time>.stateDay{
+.Content_Time>.stateDay {
   display: flex;
   flex: 1;
   margin-top: 10px;
 }
 
-.Content_Time>.stateDay>#separator{
+.Content_Time>.stateDay>#separator {
   flex: 1;
   max-width: 50px;
 }
 
-.Content_Time>.stateDay>.state{
+.Content_Time>.stateDay>.state {
   border: 1px solid #dadde1;
   border-radius: 20px;
   flex: 1;
@@ -807,19 +818,19 @@ tbody>tr>td:hover {
   letter-spacing: 6px;
 }
 
-.changeTime{
+.changeTime {
   display: flex;
   flex: 1;
 }
 
-.changeTime>.Buttons{
+.changeTime>.Buttons {
   display: flex;
   flex-direction: column;
   flex: 1;
   justify-content: space-around;
 }
 
-.changeTime>.Buttons>button{
+.changeTime>.Buttons>button {
   background-color: transparent;
   background-color: #3578f2;
   border: 1px solid #dadde1;
@@ -832,7 +843,7 @@ tbody>tr>td:hover {
   justify-content: center;
 }
 
-.changeTime>.Buttons>button:hover{
+.changeTime>.Buttons>button:hover {
   cursor: pointer;
   -webkit-box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
   -moz-box-shadow: inset 0px 0px 20px 3px rgba(0, 0, 0, 0.39);
@@ -851,11 +862,11 @@ tbody>tr>td:hover {
   border-radius: 20px;
 }
 
-.Parameters{
+.Parameters {
   flex: 1;
 }
 
-.FrmActividad{
+.FrmActividad {
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -863,14 +874,14 @@ tbody>tr>td:hover {
 
 /* Quiz */
 
-.Quiz{
+.Quiz {
   display: flex;
   flex-direction: column;
   flex: 1;
   align-items: center;
 }
 
-.Quiz-content{
+.Quiz-content {
   border: 1px solid #dadde1;
   width: 70%;
   display: flex;
@@ -879,7 +890,7 @@ tbody>tr>td:hover {
   text-align: center;
 }
 
-.Quiz-content > input[type="text"]{
+.Quiz-content>input[type="text"] {
   height: 50px;
   font-size: 40px;
   margin-bottom: 10px;
@@ -887,35 +898,35 @@ tbody>tr>td:hover {
   outline: none;
 }
 
-.Quiz-content > .textarea{
+.Quiz-content>.textarea {
   text-align: start;
   width: 100%;
   min-height: max-content;
   outline: none;
 }
 
-.Quiz-content > .textarea:hover{
+.Quiz-content>.textarea:hover {
   cursor: text;
 }
 
-.Quiz-content > .textarea:empty::before{
+.Quiz-content>.textarea:empty::before {
   position: absolute;
   content: "Descripcion del formulario";
   color: #757575;
 }
 
-.ultime-element-quiz{
+.ultime-element-quiz {
   margin-bottom: 20px;
 }
 
-.Questions{
+.Questions {
   margin: 10px;
   display: flex;
   flex-direction: column;
   text-align: start;
 }
 
-.Question{
+.Question {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -925,7 +936,7 @@ tbody>tr>td:hover {
   transition: 1s;
 }
 
-.Question > input[type="text"]{
+.Question>input[type="text"] {
   height: 40px;
   font-size: 30px;
   margin-bottom: 10px;
@@ -933,13 +944,13 @@ tbody>tr>td:hover {
   outline: none;
 }
 
-.Responses{
+.Responses {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
 }
 
-.Responses > .Response{
+.Responses>.Response {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -947,22 +958,40 @@ tbody>tr>td:hover {
   transition: 1s;
 }
 
-.Responses > .Response > input[type="text"]{
+.Responses>.Response>input[type="text"] {
   height: 30px;
   font-size: 20px;
   border: none;
   outline: none;
+  flex: 1;
 }
 
-.Responses > .Response > p{
+.Responses>.Response>p {
   color: #3578f2;
 }
 
-.Responses > .Response > p:hover{
+.Responses>.Response>p:hover {
   cursor: pointer;
 }
 
-#Circle{
+.Responses>.Response>.icon-Delete {
+  color: #dadde1;
+  width: 29px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Responses>.Response>.icon-Delete:hover {
+  border-radius: 50px;
+  background-color: #dadde1;
+  color: #a8a9aa;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#Circle {
   display: flex;
   width: 20px;
   height: 20px;
@@ -971,16 +1000,16 @@ tbody>tr>td:hover {
   margin-right: 10px;
 }
 
-.AddQuestions{
+.AddQuestions {
   display: flex;
   justify-content: center;
 }
 
-.AddQuestions:hover{
+.AddQuestions:hover {
   cursor: pointer;
 }
 
-.IconAdd{
+.IconAdd {
   position: absolute;
   margin-top: -6px;
   z-index: 10px;
@@ -989,11 +1018,71 @@ tbody>tr>td:hover {
   border-radius: 50px;
 }
 
-.LineAdd{
+.LineAdd {
   width: 100%;
   height: 10px;
   border-radius: 20px;
   background-color: #dadde1;
+}
+
+.pdfViewer_Content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.pdfViewer_Content>.pdf {
+  -webkit-box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgba(180, 179, 179, 0.5);
+  border-radius: 20px;
+  /* border: 1px solid #000; */
+}
+
+.pdfViewer_Content>.controls-pdf {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+}
+
+.pdfViewer_Content>.controls-pdf>.control {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  -webkit-box-shadow: 0px 3px 14px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 14px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 14px -5px rgba(0, 0, 0, 0.75);
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 1);
+  user-select: none;
+}
+
+.pdfViewer_Content>.controls-pdf>.control:hover{
+  cursor: pointer;
+  background-color: rgb(211, 208, 208);
+}
+
+.pdfViewer_Content>.controls-pdf>.page{
+  width: 70px;
+  font-size: 12px;
+}
+
+.pdfViewer_Content>.controls-pdf>.page:hover{
+  cursor: default;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.react-pdf__Page__canvas{
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 20px;
 }
 
 @keyframes opacity {
@@ -1063,8 +1152,7 @@ tbody>tr>td:hover {
     max-height: calc(100vh - 123px);
     overflow-x: hidden;
   }
-
-  .content-recover-and-confirm > .content-son{
+  .content-recover-and-confirm>.content-son {
     width: 100%;
   }
 }
@@ -1073,10 +1161,10 @@ tbody>tr>td:hover {
   .Navbar-Items>ul>li {
     width: 100%;
   }
-  .changeTime{
+  .changeTime {
     flex-wrap: wrap;
   }
-  .changeTime>.Buttons{
+  .changeTime>.Buttons {
     flex-direction: row;
   }
 }

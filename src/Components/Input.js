@@ -12,7 +12,7 @@ export const Input = ({ iconType, placeholder, type, name, value, onChange }) =>
                 {icon}
             </div>
             <div className="left">
-                <input type={type} placeholder={placeholder} name={name} value={value} onChange={onChange} />
+                <input type={type} placeholder={placeholder} name={name} value={value} onChange={onChange} autoComplete="off" />
             </div>
         </div>
     )

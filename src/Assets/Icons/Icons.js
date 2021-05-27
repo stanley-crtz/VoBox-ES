@@ -18,6 +18,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export const Icons = {
   User: <AccountCircleIcon />,
@@ -38,6 +39,7 @@ export const Icons = {
   Location: <LocationOnIcon />,
   ArrowUp: <ArrowUpwardIcon />,
   ArrowDown: <ArrowDownwardIcon />,
-  Reset: <RotateLeftIcon />
+  Reset: <RotateLeftIcon />,
+  Delete: <DeleteIcon />
 };
 

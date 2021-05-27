@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SunEditor, { buttonList } from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
 import { Input } from '../Input';
 
 let title = '';
 
-export const Step1 = ({ handleNext }) => {
+export const Step1 = ({ handleNext, data, setData }) => {
 
     const [state, setState] = useState({
         Title: '',
-        Content: ''
+        Description: ''
     })
 
-    const handleChangeSunEditor = (e) => setState({Content: String(e), Title: title});
+    const handleChangeSunEditor = (e) => setState({ Description: String(e), Title: title });
 
     const validateSunEditor = () => {
 
         const reg = new RegExp("\\<[^\\>]*\\>", 'img');
 
-        const validate = state.Content.replaceAll(reg, '');
+        const validate = state.Description.replaceAll(reg, '');
 
         if (validate === "") return false
 
@@ -30,6 +30,7 @@ export const Step1 = ({ handleNext }) => {
 
         if (validateSunEditor() && state.Title) {
             handleNext()
+            setData((val) => ({ ...val, toSend: { ...val.toSend, ...state } }));
         }
         else {
             alert("complete los datos")
@@ -41,6 +42,12 @@ export const Step1 = ({ handleNext }) => {
         title = value;
         setState({ ...state, [name]: value })
     };
+
+    useEffect(() => {
+
+        setState(data);
+
+    }, [data])
 
     return (
         <form onSubmit={handleSubmit}>
@@ -57,7 +64,8 @@ export const Step1 = ({ handleNext }) => {
                     buttonList: buttonList.complex
                 }}
                 placeholder="Escriba la descripcion del programa..."
-                defaultValue={state}
+                defaultValue={state.Description}
+                setContents={data.Description}
                 onChange={handleChangeSunEditor}
                 height="300px"
             />

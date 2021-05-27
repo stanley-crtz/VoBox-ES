@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Icons } from '../../Assets/Icons/Icons';
 
 export const Questions = () => {
 
@@ -15,6 +16,18 @@ export const Questions = () => {
         setQuestion({ ...Question, Responses });
     }
 
+    const handleDeleteResponse = (index) => {
+        const { Responses } = Question;
+
+        Responses.splice(index, 1);
+
+        setQuestion({
+            ...Question,
+            Responses
+        })
+
+    }
+
     return (
         <div className="Question">
             <input type="text" placeholder="Pregunta sin titulo" />
@@ -25,6 +38,9 @@ export const Questions = () => {
                         <div className="Response">
                             <div id="Circle" />
                             <input type="text" placeholder={`Opcion ${i + 1}`} />
+                            <div className="icon-Delete" onClick={() => handleDeleteResponse(i)}>
+                                {Icons.Delete}
+                            </div>
                         </div>
 
                     ))

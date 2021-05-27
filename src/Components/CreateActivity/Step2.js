@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getTimes } from '../../Assets/ObjectGlobal/Global';
 import GetTimeSelected from '../GetTimeSelected'
 
-export const Step2 = ({handleNext}) => {
+export const Step2 = ({ handleNext, handleBack, data, setData }) => {
 
     const [Workdays, setWorkdays] = useState([]);
     const [time, setTime] = useState([]);
@@ -13,13 +13,39 @@ export const Step2 = ({handleNext}) => {
 
     const removeTime = (e) => setWorkdays(e);
 
+    const handleNextStep = () => {
+
+        setData(val => ({
+            ...val,
+            toSend: {
+                ...val.toSend,
+                Workdays
+            },
+            Config: {
+                ...val.Config,
+                Workdays: time
+            }
+        }))
+        handleNext()
+    }
+
     useEffect(() => {
-        setTime(getTimes(6, 17));
+
+        if (data.Workdays.length > 0) {
+
+            setWorkdays(data.Workdays);
+            setTime(data.arrWork)
+
+        }
+        else {
+            setTime(getTimes(6, 17));
+        }
 
         return () => {
             setTime(getTimes(6, 17));
         };
-    }, []);
+
+    }, [data.Workdays, data.arrWork]);
 
     return (
         <>
@@ -30,7 +56,10 @@ export const Step2 = ({handleNext}) => {
                 activityWorkdays={Workdays}
                 removeTime={removeTime}
             />
-            <input type="button" value="Siguiente" className="success" onClick={() => handleNext()} />
+            <div className="flex-column">
+                <input type="button" value="Anterior" className="createAcountButton" onClick={handleBack} />
+                <input type="button" value="Siguiente" className="success" onClick={handleNextStep} />
+            </div>
         </>
     )
 }

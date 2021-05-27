@@ -13,7 +13,7 @@ const style = {
     }
 }
 
-export const Step4 = () => {
+export const Step4 = ({ handleBack }) => {
 
     const [stateAdd, setStateAdd] = useState(false)
     const [QuestionsAdd, setQuestionsAdd] = useState(['']);
@@ -47,7 +47,10 @@ export const Step4 = () => {
                     </div>
                     <div className="LineAdd" style={stateAdd ? style.Line : {}} />
                 </div>
-                <input type="button" value="Guardar" className="success" />
+                <div className="flex-column">
+                    <input type="button" value="Anterior" className="createAcountButton" onClick={handleBack} />
+                    <input type="button" value="Guardar" className="success" />
+                </div>
             </div>
         </div>
     )
