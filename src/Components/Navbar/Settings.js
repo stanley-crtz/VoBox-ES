@@ -8,7 +8,6 @@ export const Settings = ConnectToRedux(({ User, handleMouseClick }) => {
         <>
             <div
                 className="Navbar-Settings"
-                onClick={handleMouseClick}
             >
                 <Avatar alt="Foto de perfil" src={User?.Photo ? User.Photo : ''} />
 

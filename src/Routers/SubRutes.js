@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Redirect, Route } from "react-router";
+import { Switch, Redirect} from "react-router";
 import { ProtectedRoute } from "./ProtectedRoute";
 import NavBar from "../Components/Navbar";
 import { Home } from "../Pages/Home";
@@ -24,7 +24,7 @@ export const SubRutes = () => {
           <ProtectedRoute exact path="/_Solicitudes" component={Solicitudes} />
           <ProtectedRoute exact path="/_Ajustes" component={Settings} />
           <ProtectedRoute exact path="/_Nueva_Actividad" component={NewActivity} />
-          <Route exact path="**" component={() => <h1>No found</h1>} />
+          
         </Switch>
       </div>
     </>

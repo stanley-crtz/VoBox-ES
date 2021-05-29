@@ -3,14 +3,14 @@ import { Icon } from './Icon'
 import { Items } from './Items'
 import { Settings } from './Settings'
 
-export const Movil = () => {
+export const Movil = ({ type }) => {
     return (
         <div className="Movil">
             <div className="Content-movil-nav">
                 <Icon />
                 <Settings />
             </div>
-            <Items />
+            <Items type={type} />
         </div>
     )
 }

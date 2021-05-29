@@ -4,7 +4,7 @@ import { Popover } from '../Popover'
 import { Computer } from './Computer'
 import { Movil } from './Movil'
 
-const Index = () => {
+const Index = ({ type }) => {
 
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -14,13 +14,17 @@ const Index = () => {
 
     return (
         <nav>
-            <Computer handleMouseClick={handleMouseClick} />
-            <Movil handleMouseClick={handleMouseClick} />
+            <Computer handleMouseClick={handleMouseClick} type={type} />
+            <Movil handleMouseClick={handleMouseClick} type={type} />
             <Popover anchorEl={anchorEl} onClose={handleMouseClick}>
                 <FrmSettings />
             </Popover>
         </nav>
     )
+}
+
+Index.defaultProps = {
+    type: 'InMenu'
 }
 
 export default Index;

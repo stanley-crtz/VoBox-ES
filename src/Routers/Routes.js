@@ -8,6 +8,7 @@ import { ForgotPassword } from "../Pages/ForgotPassword";
 import { ConfirmEmail } from "../Pages/ConfirmEmail";
 import { VerifyEmail } from "../Components/VerifyEmail";
 import { VerifyPasswordReset } from "../Components/VerifyPasswordReset";
+import { InitialPage } from "../Pages/InitialPage";
 
 export const Routes = () => {
   const [splash, setSplash] = useState({
@@ -25,13 +26,17 @@ export const Routes = () => {
     <Switch>
       {splash.splash && <SplashScreen onClose={setSplash} />}
 
+      
       <Route exact path="/Login" component={Login} />
       <Route exact path="/Verifiqued" component={Verifiqued} />
       <Route exact path="/Recuperar" component={ForgotPassword} />
       <Route exact path="/ConfirmEmail" component={ConfirmEmail} />
       <Route exact path="/Verifiqued/verifyEmail" component={VerifyEmail} />
       <Route exact path="/Verifiqued/resetPassword" component={VerifyPasswordReset} />
-      <Route exact path="**" component={SubRutes} />
+      <Route path="/_" component={SubRutes} />
+      <Route exact path="**" component={InitialPage} />
+      
+      
 
     </Switch>
   );
