@@ -95,7 +95,7 @@ export const Items = ({ type }) => {
                             <li>
                                 <NavLink
                                     activeClassName="Rute-Active"
-                                    to='/Login'
+                                    to='/_'
                                     onMouseEnter={(e) => handleMouseEnter(e, 'Ingresar')}
                                     onMouseLeave={handleMouseLeave}
                                     onClick={handleMouseLeave}

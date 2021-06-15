@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import Firebase from '../Class/Firebase';
 
 export const VerifyEmail = () => {
 
     const oobCode = useQuery().get('oobCode');
     const [verify, setVerify] = useState(null);
+    const history = useHistory();
 
 
     useEffect(() => {
@@ -33,6 +34,7 @@ export const VerifyEmail = () => {
                                             type="button"
                                             value="Inicio"
                                             className="success"
+                                            onClick={() => history.push('/_')}
                                         />
                                     </>
                                 ) : (

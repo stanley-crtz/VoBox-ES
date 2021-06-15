@@ -3,11 +3,11 @@ import { Map, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Marker } from "./Marker";
 
-export const MapView = ({ coordinates, centerMap, getCoordinates }) => {
+export const MapView = ({ coordinates, centerMap, getCoordinates, zoom = 10 }) => {
 
   return (
     <Map
-      zoom={10}
+      zoom={zoom}
       crollWheelZoom={false}
       center={centerMap}
       onclick={({ latlng: { lat, lng } }) => getCoordinates({ lat, lng })}
@@ -23,3 +23,7 @@ export const MapView = ({ coordinates, centerMap, getCoordinates }) => {
     </Map>
   );
 };
+
+MapView.defaultProps = {
+  getCoordinates: () => {}
+}

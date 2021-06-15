@@ -7,6 +7,7 @@ import { Grupos } from "../Pages/Grupos";
 import { Solicitudes } from "../Pages/Solicitudes";
 import { Settings } from "../Pages/Settings";
 import { NewActivity } from "../Pages/NewActivity";
+import { PageActivity } from "../Pages/PageActivity";
 
 export const SubRutes = () => {
   return (
@@ -24,6 +25,7 @@ export const SubRutes = () => {
           <ProtectedRoute exact path="/_Solicitudes" component={Solicitudes} />
           <ProtectedRoute exact path="/_Ajustes" component={Settings} />
           <ProtectedRoute exact path="/_Nueva_Actividad" component={NewActivity} />
+          <ProtectedRoute exact path="/_Actividad" component={PageActivity} />
           
         </Switch>
       </div>

@@ -1,27 +1,22 @@
 import React, { useState } from 'react';
 import { Stepper } from '../Stepper';
-import { makeStyles } from "@material-ui/core";
 import { Step1 } from './Step1';
 import { Step2 } from './Step2';
 import { Step3 } from './Step3';
 import { Step4 } from './Step4';
 import { Step5 } from './Step5';
+import Swal from 'sweetalert2';
+import Firebase from '../../Class/Firebase';
+import { ConnectToRedux } from '../ConnectToRedux';
+import { useHistory } from 'react-router';
+import moment from 'moment';
+moment().locale('es')
 
-const useStyles = makeStyles((theme) => ({
-    button: {
-        marginTop: theme.spacing(1),
-        marginRight: theme.spacing(1),
-    },
-    actionsContainer: {
-        marginBottom: theme.spacing(2),
-    },
-}));
+const Index = ConnectToRedux(({ User }) => {
 
-const Index = () => {
+    const history = useHistory();
 
-    useStyles();
-
-    const [activeStep, setActiveStep] = useState(4);
+    const [activeStep, setActiveStep] = useState(0);
     const [Activity, setActivity] = useState({
         toSend: {
             Title: '',
@@ -32,7 +27,8 @@ const Index = () => {
                 Title: '',
                 Description: '',
                 Questions: []
-            }
+            },
+            Induccion: ''
         },
         Config: {
             Workdays: []
@@ -52,6 +48,22 @@ const Index = () => {
         "Test",
         "Formacion e Induccion"
     ];
+
+    const uploadActivity = (induccion) => {
+
+        const { toSend } = Activity;
+
+        toSend.Induccion = induccion;
+
+        Firebase.__post('Activitys', {...toSend, companyInformation: User, publish: moment().format()})
+            .then(resp => {
+                Swal.close();
+                history.push('/_Inicio');
+            })
+            .catch(err => console.error(err))
+
+        
+    }
 
     const StepContent = [
         <Step1
@@ -75,8 +87,13 @@ const Index = () => {
             handleBack={handleBack}
             data={Activity.toSend.Quiz}
             setData={setActivity}
+            handleNext={handleNext}
         />,
-        <Step5 />
+        <Step5
+            handleBack={handleBack}
+            setData={setActivity}
+            submit={uploadActivity}
+        />
     ]
 
     return (
@@ -88,6 +105,6 @@ const Index = () => {
             />
         </>
     )
-}
+})
 
 export default Index;

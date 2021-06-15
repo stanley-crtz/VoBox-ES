@@ -34,7 +34,14 @@ export const Login = () => {
       .then((resp) => {
         window.location = "/_";
       })
-      .catch((err) => Swal.fire("Error", "Verifique sus credenciales", "info"));
+      .catch((err) =>
+        Swal.fire({
+          title: "Error",
+          text: "Verifique sus credenciales",
+          icon: "info",
+          confirmButtonText: "Aceptar",
+        })
+      );
   };
 
   return (

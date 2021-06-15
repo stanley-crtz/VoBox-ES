@@ -106,7 +106,7 @@ export const Item = ({
   if (isActive)
     return (
       <td rowSpan={hoursPlus - hours} onClick={handleRemoveActivity}>
-        <div class="timeSelected">
+        <div className="timeSelected">
           <p>{`${hours > 12 ? hours - 12 : hours}:00 ${stateDay} - ${hoursPlus > 12 ? hoursPlus - 12 : hoursPlus
             }:00 ${stateDayPlus}`}</p>
         </div>
