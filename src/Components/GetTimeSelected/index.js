@@ -2,10 +2,15 @@ import React from "react";
 import { Header } from "./Header";
 import { Items } from "./Items";
 
-const Index = ({ time: data, getArrayTime, getTime, activityWorkdays, removeTime }) => {
-
+const Index = ({
+  time: data,
+  getArrayTime,
+  getTime,
+  activityWorkdays,
+  removeTime,
+  editable,
+}) => {
   const addTime = ({ row, column, time, rowSpan }) => {
-
     for (let i = row; i < row + rowSpan; i++) {
       data[i].count[column].value.isActive = false;
     }
@@ -20,27 +25,31 @@ const Index = ({ time: data, getArrayTime, getTime, activityWorkdays, removeTime
   };
 
   const removeItem = ({ row, column }) => {
-
-    const { hours, hoursPlus, stateDay, stateDayPlus } = data[row].count[column].value;
+    const { hours, hoursPlus, stateDay, stateDayPlus } = data[row].count[
+      column
+    ].value;
     const rowSpan = hoursPlus - hours;
     const category = data[row].count[column].category;
 
-    const removeActivityWorkdays = activityWorkdays.filter(({ value, category: searchCategory }, i) => {
+    const removeActivityWorkdays = activityWorkdays.filter(
+      ({ value, category: searchCategory }, i) => {
+        const {
+          hours: searchHours,
+          hoursPlus: searchHoursPlus,
+          stateDay: searchStateDay,
+          stateDayPlus: searchStateDayPlus,
+        } = value;
 
-      const {hours: searchHours, hoursPlus: searchHoursPlus, stateDay: searchStateDay, stateDayPlus: searchStateDayPlus} = value;
+        const result =
+          searchHours === hours &&
+          searchHoursPlus === hoursPlus &&
+          searchStateDay === stateDay &&
+          searchStateDayPlus === stateDayPlus &&
+          searchCategory === category;
 
-      const result = (
-        searchHours === hours &&
-        searchHoursPlus === hoursPlus &&
-        searchStateDay === stateDay &&
-        searchStateDayPlus === stateDayPlus &&
-        searchCategory === category
-      )
-
-      return !result
-
-    })
-
+        return !result;
+      }
+    );
 
     for (let i = row; i < row + rowSpan; i++) {
       data[i].count[column].value.isActive = null;
@@ -50,13 +59,12 @@ const Index = ({ time: data, getArrayTime, getTime, activityWorkdays, removeTime
       ...data[row].count[column].value,
       isActive: null,
       hoursPlus: hours + 1,
-      stateDayPlus: hours + 1 > 11 ? "pm" : "am"
+      stateDayPlus: hours + 1 > 11 ? "pm" : "am",
     };
 
     getArrayTime(data);
     removeTime(removeActivityWorkdays);
-
-  }
+  };
 
   return (
     <div className="containerTables">
@@ -74,6 +82,7 @@ const Index = ({ time: data, getArrayTime, getTime, activityWorkdays, removeTime
                 getTime={addTime}
                 removeItem={removeItem}
                 key={`${title}_${i}`}
+                editable={editable}
               />
             ))}
           </tbody>
@@ -81,6 +90,10 @@ const Index = ({ time: data, getArrayTime, getTime, activityWorkdays, removeTime
       </div>
     </div>
   );
+};
+
+Index.defaultProps = {
+  editable: true,
 };
 
 export default Index;

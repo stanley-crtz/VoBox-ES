@@ -24,7 +24,7 @@ const ConfirmActivity = ({ desde, hasta, getConfirm, closeModal }) => {
   return (
     <div className="ConfirmActivity">
       <h2>Confirma tu actividad</h2>
-      
+
       <div className="ConfirmActivity_Time">
         {/* Desde */}
         <div className="Content_Time">
@@ -43,7 +43,9 @@ const ConfirmActivity = ({ desde, hasta, getConfirm, closeModal }) => {
         <div className="changeTime">
           <div className="Content_Time">
             <div className="Time">
-              <div className="Box Hour">{contador > 12 ? contador - 12 : contador}</div>
+              <div className="Box Hour">
+                {contador > 12 ? contador - 12 : contador}
+              </div>
               <div className="separate-Time">:</div>
               <div className="Box Minutes">00</div>
             </div>
@@ -58,12 +60,14 @@ const ConfirmActivity = ({ desde, hasta, getConfirm, closeModal }) => {
             <button onClick={() => reset()}>{Icons.Reset}</button>
             <button onClick={() => aumentar()}>{Icons.ArrowDown}</button>
           </div>
-
         </div>
-
       </div>
-      <input className="success" type="button" value="Confirmar" onClick={handleClickConfirm} />
-
+      <input
+        className="success"
+        type="button"
+        value="Confirmar"
+        onClick={handleClickConfirm}
+      />
     </div>
   );
 };
@@ -75,14 +79,19 @@ export const Item = ({
     value: { isActive, hours, stateDay, hoursPlus, stateDayPlus },
   },
   i,
+  editable,
 }) => {
   const [openModal, setOpenModal] = useState(false);
 
-  const handleAddActivity = () => setOpenModal(true);
+  const handleAddActivity = () => {
+    if (editable) setOpenModal(true);
+  };
 
   const confirmAddActivity = (e) => handleAddTime(i, e);
 
-  const handleRemoveActivity = () => RemoveItem(i);
+  const handleRemoveActivity = () => {
+    if (editable) RemoveItem(i);
+  };
 
   if (isActive === null)
     return (
@@ -107,8 +116,9 @@ export const Item = ({
     return (
       <td rowSpan={hoursPlus - hours} onClick={handleRemoveActivity}>
         <div className="timeSelected">
-          <p>{`${hours > 12 ? hours - 12 : hours}:00 ${stateDay} - ${hoursPlus > 12 ? hoursPlus - 12 : hoursPlus
-            }:00 ${stateDayPlus}`}</p>
+          <p>{`${hours > 12 ? hours - 12 : hours}:00 ${stateDay} - ${
+            hoursPlus > 12 ? hoursPlus - 12 : hoursPlus
+          }:00 ${stateDayPlus}`}</p>
         </div>
       </td>
     );
